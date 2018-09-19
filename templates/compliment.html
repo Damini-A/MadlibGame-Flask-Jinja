@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}A Compliment{% endblock %}
-
+     
 {% block content %}
-    Hi {{ person }}! I think you're {{ compliment }}!
+<link rel="stylesheet" type="text/css" href="/static/madlibs.css">
+ Hi {{ person }}! 
+ <br>
+    I think you're 
+<span class="comp">
+    {% for compliment in compliments %} {{compliment}} {%endfor%}!
+</span>
     <form action="/game">
         would you like to play a game?
         <input type="radio", name='yesno',value='yes'>YES
